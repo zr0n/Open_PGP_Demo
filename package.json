@@ -1,0 +1,16 @@
+{
+  "name": "openpgp_demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.15.4",
+    "http": "0.0.0",
+    "openpgp": "^2.5.10"
+  }
+}
