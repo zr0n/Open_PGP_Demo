@@ -47,12 +47,20 @@ class OpenPGPServer{
     _setupListeners(){
         app.post('/', (req, res) => {
             let {name, email, password} = req.body
+            res.setTimeout(240000, function(){
+                console.log('Request has timed out.');
+                    res.send(408);
+                });
             this.generator.generate(name, email, password)
                 .then((r) => this._sendResult(r, res))
            //     .catch((err) =>  this._sendError(err, res))
         })
         app.get('/', (req, res) =>{ 
             let {name, email, password} = req.query
+            res.setTimeout(240000, function(){
+                console.log('Request has timed out.');
+                    res.send(408);
+                });
             this.generator.generate(name, email, password)
                 .then((r) => this._sendResult(r, res))
          //       .catch((err) =>  this._sendError(err, res))
